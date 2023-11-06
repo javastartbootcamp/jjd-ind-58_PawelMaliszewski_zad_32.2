@@ -1,11 +1,11 @@
 package pl.javastart.jpaoptimalization.countryandlanguage;
 
-public class LanguageWithAllCountriesThatAreUsingItDTO {
+public class LanguageWithAllCountriesThatAreUsingItDto {
 
     private String language;
     private String countries;
 
-    public LanguageWithAllCountriesThatAreUsingItDTO(String language, String countries) {
+    public LanguageWithAllCountriesThatAreUsingItDto(String language, String countries) {
         this.language = language;
         this.countries = countries;
     }

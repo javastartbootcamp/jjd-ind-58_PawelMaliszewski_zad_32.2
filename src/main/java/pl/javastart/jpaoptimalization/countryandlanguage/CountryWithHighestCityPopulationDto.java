@@ -1,11 +1,11 @@
 package pl.javastart.jpaoptimalization.countryandlanguage;
 
-public class CountryWithHighestCityPopulationDTO {
+public class CountryWithHighestCityPopulationDto {
     private String name;
     private String cityName;
     private int population;
 
-    public CountryWithHighestCityPopulationDTO(String name, String cityName, int population) {
+    public CountryWithHighestCityPopulationDto(String name, String cityName, int population) {
         this.name = name;
         this.cityName = cityName;
         this.population = population;

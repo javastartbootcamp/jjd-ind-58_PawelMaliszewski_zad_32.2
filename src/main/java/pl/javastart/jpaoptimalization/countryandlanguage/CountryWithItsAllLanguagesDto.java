@@ -1,10 +1,10 @@
 package pl.javastart.jpaoptimalization.countryandlanguage;
 
-public class CountryWithItsAllLanguagesDTO {
+public class CountryWithItsAllLanguagesDto {
     private String country;
     private String languages;
 
-    public CountryWithItsAllLanguagesDTO(String country, String languages) {
+    public CountryWithItsAllLanguagesDto(String country, String languages) {
         this.country = country;
         this.languages = languages;
     }

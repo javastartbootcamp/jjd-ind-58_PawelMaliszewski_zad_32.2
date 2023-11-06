@@ -14,25 +14,25 @@ public class CountryService {
         this.countryRepository = countryRepository;
     }
 
-   public List<CountryWithHighestCityPopulationDTO> countryWithHighestCityPopulationList() {
+   public List<CountryWithHighestCityPopulationDto> countryWithHighestCityPopulationList() {
         return countryRepository.countryWithHighestCityPopulation().stream()
-                .map(obj -> new CountryWithHighestCityPopulationDTO(
+                .map(obj -> new CountryWithHighestCityPopulationDto(
                         obj[0].toString()
                         , obj[1].toString()
                         , Integer.parseInt(obj[2].toString()))).collect(Collectors.toList());
    }
 
-    public List<CountryWithItsAllLanguagesDTO> countryWithAllLanguagesList() {
+    public List<CountryWithItsAllLanguagesDto> countryWithAllLanguagesList() {
         return countryRepository.getCountryWithAllLanguageInUSe()
                 .stream().map(
-                        obj -> new CountryWithItsAllLanguagesDTO(obj[0].toString(), obj[1].toString())
+                        obj -> new CountryWithItsAllLanguagesDto(obj[0].toString(), obj[1].toString())
                 )
                 .collect(Collectors.toList());
     }
 
-    public List<LanguageWithAllCountriesThatAreUsingItDTO> languageWithAllCountriesThatAreUsingItDTOList() {
+    public List<LanguageWithAllCountriesThatAreUsingItDto> languageWithAllCountriesThatAreUsingItDTOList() {
         return countryRepository.getAllLanguagesAndCountriesThatAreUsingIt().stream()
-                .map(obj -> new LanguageWithAllCountriesThatAreUsingItDTO(obj[0].toString(), obj[1].toString()))
+                .map(obj -> new LanguageWithAllCountriesThatAreUsingItDto(obj[0].toString(), obj[1].toString()))
                 .collect(Collectors.toList());
     }
 }
