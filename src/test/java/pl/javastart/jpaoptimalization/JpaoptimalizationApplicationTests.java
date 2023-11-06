@@ -13,5 +13,5 @@ class JpaoptimalizationApplicationTests {
 
     @Test
     void contextLoads() {
-
+    }
 }
