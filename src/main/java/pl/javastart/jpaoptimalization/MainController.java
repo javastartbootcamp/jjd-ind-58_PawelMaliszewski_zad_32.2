@@ -28,7 +28,7 @@ public class MainController {
 
     @GetMapping("/jezyki-i-kraje")
     public String languagesWithCountries(Model model) {
-        model.addAttribute("langWithCtry", countryService.languageWithAllCountriesThatAreUsingItDTOList());
+        model.addAttribute("langWithCtry", countryService.languageWithAllCountriesThatAreUsingItDtoList());
         return "languagesWithCountries";
     }
 }

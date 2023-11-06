@@ -17,7 +17,7 @@ public interface CountryRepository extends JpaRepository<Country, String> {
                    "order by countrylanguage.Percentage separator ', ') as lang from country, countrylanguage " +
                    "Where country.Code = countrylanguage.CountryCode group by countrylanguage.CountryCode " +
                    "order by country.Name;", nativeQuery = true)
-    List<Object[]> getCountryWithAllLanguageInUSe();
+    List<Object[]> getCountryWithAllLanguageInUse();
 
     @Query(value = "SELECT Language, group_concat(country.Name order by country.Name separator ', ') as Countries " +
                    "from countrylanguage, country where countrylanguage.CountryCode=country.Code " +

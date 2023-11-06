@@ -14,23 +14,25 @@ public class CountryService {
         this.countryRepository = countryRepository;
     }
 
-   public List<CountryWithHighestCityPopulationDto> countryWithHighestCityPopulationList() {
+    public List<CountryWithHighestCityPopulationDto> countryWithHighestCityPopulationList() {
         return countryRepository.countryWithHighestCityPopulation().stream()
                 .map(obj -> new CountryWithHighestCityPopulationDto(
-                        obj[0].toString()
-                        , obj[1].toString()
-                        , Integer.parseInt(obj[2].toString()))).collect(Collectors.toList());
-   }
+                        obj[0].toString(),
+                        obj[1].toString(),
+                        Integer.parseInt(obj[2].toString()))
+                )
+                .collect(Collectors.toList());
+    }
 
     public List<CountryWithItsAllLanguagesDto> countryWithAllLanguagesList() {
-        return countryRepository.getCountryWithAllLanguageInUSe()
+        return countryRepository.getCountryWithAllLanguageInUse()
                 .stream().map(
                         obj -> new CountryWithItsAllLanguagesDto(obj[0].toString(), obj[1].toString())
                 )
                 .collect(Collectors.toList());
     }
 
-    public List<LanguageWithAllCountriesThatAreUsingItDto> languageWithAllCountriesThatAreUsingItDTOList() {
+    public List<LanguageWithAllCountriesThatAreUsingItDto> languageWithAllCountriesThatAreUsingItDtoList() {
         return countryRepository.getAllLanguagesAndCountriesThatAreUsingIt().stream()
                 .map(obj -> new LanguageWithAllCountriesThatAreUsingItDto(obj[0].toString(), obj[1].toString()))
                 .collect(Collectors.toList());
