@@ -13,7 +13,7 @@
 
 <div style="max-width: 1000px; width: 100%; margin: 50px auto">
 
-    <a href="/">← Powrót do strony główej</a>
+    <a href="/">← Powrót do strony głównej</a>
 
     <h1>Kraje i ich języki</h1>
 
@@ -25,9 +25,9 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="country: ${countries}">
-            <td th:text="${country.name}"></td>
-            <td th:if="${country.getLanguages()}" th:text="${country.getLanguages()}"></td>
+        <tr th:each="ctry: ${countryWithAllLang}" th:object="${ctry}">
+            <td th:text="*{country}"></td>
+            <td th:if="*{languages}" th:text="*{languages}"></td>
         </tr>
         </tbody>
     </table>

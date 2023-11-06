@@ -13,7 +13,7 @@
 
 <div style="max-width: 1000px; width: 100%; margin: 50px auto">
 
-    <a href="/">← Powrót do strony główej</a>
+    <a href="/">← Powrót do strony głównej</a>
 
     <h1>Kraje i ich największe miasta</h1>
 
@@ -22,22 +22,19 @@
         <tr>
             <th>Kraj</th>
             <th>Największe miasto</th>
-            <th>Liczba ludnosci</th>
+            <th>Liczba ludności</th>
         </tr>
         </thead>
         <tbody>
-        <tr th:each="country: ${countries}">
-            <td th:text="${country.name}"></td>
-            <td th:if="${country.getCities().size() > 0}" th:text="${country.getCities().get(0).getName()}"></td>
-            <td th:unless="${country.getCities().size() > 0}">brak danych</td>
-            <td th:if="${country.getCities().size() > 0}" th:text="${country.getCities().get(0).getPopulation()}"></td>
-            <td th:unless="${country.getCities().size() > 0}">brak danych</td>
+        <tr th:each="country: ${countries}" th:object="${country}">
+            <td th:text="*{name}"></td>
+            <td th:if="*{population > 0}" th:text="*{cityName}"></td>
+            <td th:unless="*{population > 0}">Brak danych</td>
+            <td th:if="*{population > 0}" th:text="*{population}"></td>
+            <td th:unless="*{population > 0}">Brak danych</td>
         </tr>
         </tbody>
     </table>
-
 </div>
-
-
 </body>
 </html>
