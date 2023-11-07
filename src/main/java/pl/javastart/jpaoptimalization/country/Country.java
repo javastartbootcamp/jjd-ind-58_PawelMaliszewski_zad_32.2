@@ -59,7 +59,7 @@ public class Country {
     @OneToMany(mappedBy = "country")
     private Collection<City> cities;
 
-    @OrderBy("Percentage ASC")
+    @OrderBy("Percentage DESC")
     @OneToMany
     @JoinColumn(name = "countryCode")
     private Collection<CountryLanguage> languages;
