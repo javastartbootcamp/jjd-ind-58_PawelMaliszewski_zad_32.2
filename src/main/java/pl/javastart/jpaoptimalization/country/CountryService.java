@@ -17,12 +17,13 @@ public class CountryService {
     public List<Country> findAll() {
         return countryRepository.findAll();
     }
+
     public List<Country> findAllWithCities() {
         return countryRepository.findAllWithCities();
     }
 
     public List<CountryWithLanguagesDto> countryWithLanguagesDtoList() {
-         return countryRepository.findAllWithLanguages().stream()
+        return countryRepository.findAllWithLanguages().stream()
                 .map(CountryWithLanguagesMapper::convertToCountryWithLanguageDto).collect(Collectors.toList());
     }
 }

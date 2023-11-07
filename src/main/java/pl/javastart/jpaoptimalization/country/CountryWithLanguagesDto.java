@@ -5,7 +5,6 @@ public class CountryWithLanguagesDto {
     private String countryName;
     private String languages;
 
-
     public String getCountryName() {
         return countryName;
     }
