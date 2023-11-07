@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Kraje i ich języki</title>
@@ -10,13 +10,9 @@
             crossorigin="anonymous"></script>
 </head>
 <body>
-
 <div style="max-width: 1000px; width: 100%; margin: 50px auto">
-
     <a href="/">← Powrót do strony głównej</a>
-
     <h1>Kraje i ich języki</h1>
-
     <table class="table">
         <thead>
         <tr>
@@ -25,15 +21,12 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="ctry: ${countryWithAllLang}" th:object="${ctry}">
-            <td th:text="*{country}"></td>
-            <td th:if="*{languages}" th:text="*{languages}"></td>
+        <tr th:each="ctry: ${countries}">
+            <td th:text="${ctry.countryName}"></td>
+            <td th:if="${ctry.languages}" th:text="${ctry.languages}"></td>
         </tr>
         </tbody>
     </table>
-
 </div>
-
-
 </body>
 </html>

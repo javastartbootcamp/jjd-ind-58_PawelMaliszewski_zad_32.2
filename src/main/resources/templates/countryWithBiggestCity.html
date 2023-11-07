@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Kraj i jego największe miasto</title>
@@ -10,13 +10,9 @@
             crossorigin="anonymous"></script>
 </head>
 <body>
-
 <div style="max-width: 1000px; width: 100%; margin: 50px auto">
-
     <a href="/">← Powrót do strony głównej</a>
-
     <h1>Kraje i ich największe miasta</h1>
-
     <table class="table">
         <thead>
         <tr>
@@ -26,12 +22,12 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="country: ${countries}" th:object="${country}">
-            <td th:text="*{name}"></td>
-            <td th:if="*{population > 0}" th:text="*{cityName}"></td>
-            <td th:unless="*{population > 0}">Brak danych</td>
-            <td th:if="*{population > 0}" th:text="*{population}"></td>
-            <td th:unless="*{population > 0}">Brak danych</td>
+        <tr th:each="country: ${countries}">
+            <td th:text="${country.name}"></td>
+            <td th:if="${country.getCities().size() > 0}" th:text="${country.getCities().get(0).getName()}"></td>
+            <td th:unless="${country.getCities().size() > 0}">Brak danych</td>
+            <td th:if="${country.getCities().size() > 0}" th:text="${country.getCities().get(0).getPopulation()}"></td>
+            <td th:unless="${country.getCities().size() > 0}">Brak danych</td>
         </tr>
         </tbody>
     </table>

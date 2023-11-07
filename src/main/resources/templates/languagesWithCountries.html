@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Języki i kraje</title>
@@ -10,13 +10,9 @@
             crossorigin="anonymous"></script>
 </head>
 <body>
-
 <div style="max-width: 1000px; width: 100%; margin: 50px auto">
-
     <a href="/">← Powrót do strony głównej</a>
-
     <h1>Języki i kraje</h1>
-
     <table class="table">
         <thead>
         <tr>
@@ -25,15 +21,12 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="lwc: ${langWithCtry}" th:object="${lwc}">
-            <td th:text="*{language}"></td>
-            <td th:text="*{countries}">TODO</td>
+        <tr th:each="language: ${langAndCountries}">
+            <td th:text="${language.key}"></td>
+            <td th:text="${language.value}">TODO</td>
         </tr>
         </tbody>
     </table>
-
 </div>
-
-
 </body>
 </html>
